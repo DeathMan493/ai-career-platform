@@ -1,0 +1,7 @@
+cd "E:\Amrita\SEMESTER 2\Projects\FSD\backend"
+.\.venv\Scripts\activate
+python -m uvicorn app.main:app --reload
+
+
+cd "E:\Amrita\SEMESTER 2\Projects\FSD"
+npm run dev

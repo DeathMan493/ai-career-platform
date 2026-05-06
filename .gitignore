@@ -1,0 +1,12 @@
+node_modules/
+dist/
+backend/.venv/
+backend/.env
+backend/firebase-service-account.json
+backend/*firebase-adminsdk*.json
+__pycache__/
+*.pyc
+.env
+.env.local
+*creds*.txt
+mongodb.png

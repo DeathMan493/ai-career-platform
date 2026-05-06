@@ -1,0 +1,131 @@
+{
+  "users": [
+    {
+      "_id": "ObjectId('6618f4a12ab34cd56ef78901')",
+      "firebase_uid": "firebase_uid_123",
+      "name": "Vaibhav Mahajan",
+      "email": "vai.mahajan2002@gmail.com",
+      "career_goal": "AI Researcher",
+      "skills": [
+        {
+          "skill": "Python",
+          "level": "Advanced"
+        },
+        {
+          "skill": "Machine Learning",
+          "level": "Intermediate"
+        },
+        {
+          "skill": "Deep Learning",
+          "level": "Beginner"
+        }
+      ],
+      "created_at": "2026-04-13T09:30:00Z",
+      "updated_at": "2026-04-13T10:15:00Z",
+      "last_login_at": "2026-04-13T10:20:00Z"
+    }
+  ],
+  "courses": [
+    {
+      "_id": "ObjectId('6618f4a12ab34cd56ef78911')",
+      "source_id": "course_001",
+      "title": "Advanced Deep Learning Systems",
+      "provider": "Coursera",
+      "difficulty": "Advanced",
+      "duration": "8 weeks",
+      "url": "https://example.org/course/deep-learning-systems",
+      "skills": [
+        "Python",
+        "Machine Learning",
+        "Deep Learning"
+      ],
+      "normalized_skills": [
+        "Python",
+        "Machine Learning",
+        "Deep Learning"
+      ]
+    }
+  ],
+  "papers": [
+    {
+      "_id": "ObjectId('6618f4a12ab34cd56ef78921')",
+      "source_id": "https://openalex.org/W1234567890",
+      "title": "Explainable Cross-Domain Recommendation with Knowledge Graphs",
+      "publication_year": 2025,
+      "keywords": [
+        "Knowledge Graphs",
+        "Recommendation Systems",
+        "Explainability"
+      ],
+      "concepts": [
+        {
+          "name": "Knowledge Graphs"
+        },
+        {
+          "name": "Machine Learning"
+        }
+      ],
+      "primary_location": {
+        "source": {
+          "display_name": "Knowledge-Based Systems"
+        }
+      },
+      "normalized_skills": [
+        "Knowledge Graphs",
+        "Machine Learning",
+        "Recommendation Systems"
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "_id": "ObjectId('6618f4a12ab34cd56ef78931')",
+      "source_id": "job_001",
+      "title": "Applied AI Research Assistant",
+      "organization": "Insight AI Lab",
+      "qualification_summary": "Looking for candidates with Python, Machine Learning, Knowledge Graphs, and research evaluation skills.",
+      "requirements": "Experience in deep learning, graph-based methods, and recommendation systems.",
+      "normalized_skills": [
+        "Python",
+        "Machine Learning",
+        "Knowledge Graphs",
+        "Deep Learning",
+        "Model Evaluation"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "_id": "ObjectId('6618f4a12ab34cd56ef78941')",
+      "name": "Machine Learning",
+      "aliases": [
+        "ML"
+      ],
+      "source_tags": [
+        "course",
+        "paper",
+        "job"
+      ],
+      "source_counts": {
+        "course": 125,
+        "paper": 16,
+        "job": 9
+      },
+      "occurrence_count": 150,
+      "examples": {
+        "course": [
+          "Advanced Deep Learning Systems"
+        ],
+        "paper": [
+          "Explainable Cross-Domain Recommendation with Knowledge Graphs"
+        ],
+        "job": [
+          "Applied AI Research Assistant"
+        ]
+      },
+      "category": null,
+      "description": null,
+      "onet_code": null
+    }
+  ]
+}
