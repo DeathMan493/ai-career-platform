@@ -1,6 +1,5 @@
 from functools import lru_cache
 
-from pydantic import field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -8,14 +7,14 @@ class Settings(BaseSettings):
     app_name: str = "AI Platform API"
     app_version: str = "0.1.0"
     api_v1_prefix: str = "/api/v1"
-    allowed_origins: list[str] = [
-        "http://localhost:5173",
-        "http://localhost:5174",
-        "http://localhost:5175",
-        "http://127.0.0.1:5173",
-        "http://127.0.0.1:5174",
-        "http://127.0.0.1:5175",
-    ]
+    allowed_origins: str = (
+        "http://localhost:5173,"
+        "http://localhost:5174,"
+        "http://localhost:5175,"
+        "http://127.0.0.1:5173,"
+        "http://127.0.0.1:5174,"
+        "http://127.0.0.1:5175"
+    )
     mongodb_uri: str = "mongodb+srv://<username>:<password>@<cluster-url>/"
     mongodb_database: str = "ai_platform"
     neo4j_uri: str = "bolt://localhost:7687"
@@ -35,12 +34,9 @@ class Settings(BaseSettings):
     firebase_clock_skew_seconds: int = 10
     data_dir: str = "data"
 
-    @field_validator("allowed_origins", mode="before")
-    @classmethod
-    def parse_allowed_origins(cls, value: str | list[str]) -> list[str]:
-        if isinstance(value, str):
-            return [origin.strip() for origin in value.split(",") if origin.strip()]
-        return value
+    @property
+    def cors_allowed_origins(self) -> list[str]:
+        return [origin.strip().rstrip("/") for origin in self.allowed_origins.split(",") if origin.strip()]
 
     model_config = SettingsConfigDict(
         env_file=".env",
