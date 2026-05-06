@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import logging
 
-from pymongo.errors import CollectionInvalid, OperationFailure
+from pymongo.errors import CollectionInvalid, OperationFailure, PyMongoError
 
 from app.ingestion.mongo import get_database
 
@@ -150,4 +150,7 @@ def ensure_users_collection_validator() -> None:
 
 
 def ensure_database_guards() -> None:
-    ensure_users_collection_validator()
+    try:
+        ensure_users_collection_validator()
+    except PyMongoError:
+        logger.warning("MongoDB startup validation skipped because the database is unavailable.")
